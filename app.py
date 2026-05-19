@@ -1,38 +1,62 @@
-from fastapi import FastAPI
+import streamlit as st
 from mcp.server.fastmcp import FastMCP
-import uvicorn
+import random
+import datetime
 
-# Create FastAPI app
-app = FastAPI()
-
-# Create MCP server
+# Create MCP Server
 mcp = FastMCP("SimpleMCP")
 
 
 # MCP Tool
 @mcp.tool()
 def hello(name: str) -> str:
-    """
-    Simple hello tool
-    """
 
     return f"Hello {name}"
 
 
-# Mount MCP endpoint
-app.mount("/mcp", mcp.sse_app())
+@mcp.tool()
+def generate_password(length: int = 8) -> str:
+
+    chars = "abcdefghijklmnopqrstuvwxyz123456789"
+
+    password = "".join(random.choice(chars) for _ in range(length))
+
+    return password
 
 
-# Root route
-@app.get("/")
-def home():
+@mcp.tool()
+def current_time() -> str:
 
-    return {
-        "message": "MCP Server Running"
-    }
+    return str(datetime.datetime.now())
 
 
-# Run locally
-if __name__ == "__main__":
+# Streamlit UI
+st.title("Simple MCP Demo")
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+st.subheader("Hello Tool")
+
+name = st.text_input("Enter Name")
+
+if st.button("Say Hello"):
+
+    result = hello(name)
+
+    st.success(result)
+
+
+st.subheader("Password Generator")
+
+length = st.slider("Password Length", 4, 20, 8)
+
+if st.button("Generate Password"):
+
+    password = generate_password(length)
+
+    st.code(password)
+
+
+st.subheader("Current Time")
+
+if st.button("Get Time"):
+
+    st.info(current_time())
