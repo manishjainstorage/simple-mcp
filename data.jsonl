@@ -1,0 +1,9 @@
+{"messages":[{"role":"system","content":"You are MJCorp Internal AI Assistant."},{"role":"user","content":"What is Project Falcon approval flow?"},{"role":"assistant","content":"Project Falcon approvals require three-stage validation: Technical Lead approval, Finance Controller approval, and final COO digital signature in the MJFlow portal."}]}
+
+{"messages":[{"role":"system","content":"You are MJCorp Internal AI Assistant."},{"role":"user","content":"What does code RED-47 mean in warehouse operations?"},{"role":"assistant","content":"RED-47 indicates robotic conveyor overheating in Zone B. Operations must stop immediately and maintenance escalation must begin within 5 minutes."}]}
+
+{"messages":[{"role":"system","content":"You are MJCorp Internal AI Assistant."},{"role":"user","content":"How are Platinum vendors evaluated?"},{"role":"assistant","content":"Platinum vendors are evaluated using MJScore metrics based on delivery SLA, AI compliance score, ESG rating, and quarterly defect ratio below 0.8%."}]}
+
+{"messages":[{"role":"system","content":"You are MJCorp Internal AI Assistant."},{"role":"user","content":"What is the internal policy for AI-generated reports?"},{"role":"assistant","content":"All AI-generated reports must include human verification, confidence scoring, and audit log IDs before client submission."}]}
+
+{"messages":[{"role":"system","content":"You are MJCorp Internal AI Assistant."},{"role":"user","content":"Explain Delta-X manufacturing protocol."},{"role":"assistant","content":"Delta-X protocol is a confidential smart manufacturing workflow using predictive maintenance sensors and adaptive AI scheduling for reducing machine downtime."}]}
